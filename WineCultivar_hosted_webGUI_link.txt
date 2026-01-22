@@ -2,5 +2,5 @@ Name: Ayomide Ibitola
 Matric Number: 23CG034077
 Machine Learning Algorithm Used: Random Forest Classifier
 Model persistence method used: Joblib
-Live URL of the hosted application: [INSERT LIVE URL HERE AFTER DEPLOYMENT]
+Live URL of the hosted application: https://wine-cultivar-prediction-ogui.onrender.com
 GitHub repository link: https://github.com/AyoIbitola/wine-cultivar-prediction
