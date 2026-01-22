@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Cultivar Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍷 Wine Cultivar Predictor</h1>
+            <p>Enter the chemical properties to identify the wine origin.</p>
+        </div>
+
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="alcohol">Alcohol</label>
+                <input type="number" step="0.01" name="alcohol" id="alcohol" placeholder="e.g. 13.2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="flavanoids">Flavanoids</label>
+                <input type="number" step="0.01" name="flavanoids" id="flavanoids" placeholder="e.g. 2.03" required>
+            </div>
+
+            <div class="form-group">
+                <label for="color_intensity">Color Intensity</label>
+                <input type="number" step="0.01" name="color_intensity" id="color_intensity" placeholder="e.g. 4.6" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hue">Hue</label>
+                <input type="number" step="0.001" name="hue" id="hue" placeholder="e.g. 1.04" required>
+            </div>
+
+            <div class="form-group">
+                <label for="proline">Proline</label>
+                <input type="number" step="1" name="proline" id="proline" placeholder="e.g. 1050" required>
+            </div>
+
+            <div class="form-group">
+                <label for="od280">OD280/OD315 of Diluted Wines</label>
+                <input type="number" step="0.01" name="od280" id="od280" placeholder="e.g. 3.4" required>
+            </div>
+
+            <button type="submit" class="btn">Predict Cultivar</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result-box">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+        {% endif %}
+        
+        <div class="footer">
+            <p>Project by Ayomide Ibitola (23CG034077)</p>
+        </div>
+    </div>
+</body>
+</html>
